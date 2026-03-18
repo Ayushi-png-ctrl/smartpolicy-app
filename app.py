@@ -12,7 +12,7 @@ st.set_page_config(
     layout="wide"
 )
 
-tab1,tab2=st.tabs(["Prediction,"Upload Data"])
+tab1,tab2=st.tabs(["Prediction","Upload Data"])
 
 # Custom CSS for better styling
 with tab1
