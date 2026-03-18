@@ -15,7 +15,7 @@ st.set_page_config(
 tab1,tab2=st.tabs(["Prediction","Upload Data"])
 
 # Custom CSS for better styling
-with tab1
+with tab1:
 st.markdown("""
 <style>
     .main-header {
