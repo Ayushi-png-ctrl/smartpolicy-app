@@ -138,7 +138,7 @@ if submitted and model is not None:
         'bmi': [bmi],
         'children': [children],
         'smoker': [1 if smoker == 'yes' else 0],
-        'region':[0]
+        'region':[0],
         'bmi_risk': [bmi / age]  # Feature engineering as done in your notebook
     })
     
