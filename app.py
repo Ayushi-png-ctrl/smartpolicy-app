@@ -16,7 +16,7 @@ tab1,tab2=st.tabs(["Prediction","Upload Data"])
 
 # Custom CSS for better styling
 with tab1:
-st.markdown("""
+    st.markdown("""
 <style>
     .main-header {
         font-size: 3rem;
