@@ -94,11 +94,8 @@ with col1:
         children = st.number_input("Number of Children", min_value=0, max_value=10, value=0, step=1)
         
         smoker = st.selectbox("Smoker", options=["yes", "no"])
-        
-        region = st.selectbox(
-            "Region", 
-            options=["northeast", "northwest", "southeast", "southwest"]
-        )
+        region="northeast"
+      
         
         submitted = st.form_submit_button("💰 Predict Premium", use_container_width=True)
 
@@ -141,7 +138,7 @@ if submitted and model is not None:
         'bmi': [bmi],
         'children': [children],
         'smoker': [1 if smoker == 'yes' else 0],
-        'region': [{'northeast': 0, 'northwest': 1, 'southeast': 2, 'southwest': 3}[region]],
+        'region':[0]
         'bmi_risk': [bmi / age]  # Feature engineering as done in your notebook
     })
     
