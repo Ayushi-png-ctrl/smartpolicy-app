@@ -12,7 +12,10 @@ st.set_page_config(
     layout="wide"
 )
 
+tab1,tab2=st.tabs(["Prediction,"Upload Data"])
+
 # Custom CSS for better styling
+with tab1
 st.markdown("""
 <style>
     .main-header {
@@ -219,3 +222,40 @@ st.markdown(
     "<p style='text-align: center; color: gray;'>SmartPolicy | AI-Powered Insurance Prediction | v1.0</p>",
     unsafe_allow_html=True
 )
+with tab2:
+    import pandas as pd
+    import re
+
+    st.header("📂 Upload Your Dataset")
+
+    uploaded_file = st.file_uploader(
+        "Upload CSV or JSON file",
+        type=["csv", "json"]
+    )
+
+    if uploaded_file is not None:
+        if uploaded_file.name.endswith('.csv'):
+            df = pd.read_csv(uploaded_file)
+        else:
+            df = pd.read_json(uploaded_file)
+
+        st.success("✅ File uploaded successfully")
+        st.dataframe(df.head())
+
+    st.subheader("🔗 Load from Google Drive")
+
+    drive_link = st.text_input("Paste Google Drive link")
+
+    if drive_link:
+        try:
+            file_id = re.findall(r'/d/(.*?)/', drive_link)[0]
+            download_url = f"https://drive.google.com/uc?id={file_id}"
+
+            df = pd.read_csv(download_url)
+
+            st.success("✅ File loaded from Google Drive")
+            st.dataframe(df.head())
+
+        except:
+            st.error("❌ Invalid link")
+            
