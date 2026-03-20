@@ -12,7 +12,7 @@ st.set_page_config(
     layout="wide"
 )
 
-tab1,tab2=st.tabs(["Prediction","Upload Data"])
+tab1,tab2,tab3=st.tabs(["Prediction","Upload Data","Sample File"])
 
 # Custom CSS for better styling
 with tab1:
@@ -255,4 +255,26 @@ with tab2:
 
         except:
             st.error("❌ Invalid link")
+
+with tab3:
+    st.subheader("📄 Example File Format")
+
+    example_data = pd.DataFrame({
+        "age": [25, 30, 45],
+        "bmi": [22.5, 27.1, 31.0],
+        "smoker": ["yes", "no", "yes"],
+        "charges": [2000, 3000, 5000]
+    })
+
+    st.write("This is how your uploaded file should look:")
+    st.dataframe(example_data)
+
+    # Download button
+    csv = example_data.to_csv(index=False).encode('utf-8')
+    st.download_button(
+        label="⬇ Download Example CSV",
+        data=csv,
+        file_name="example_file.csv",
+        mime="text/csv"
+    )
             
