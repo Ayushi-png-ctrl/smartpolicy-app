@@ -12,18 +12,18 @@ st.set_page_config(
     layout="wide"
 )
 
-tab1, tab2, tab3 = st.tabs(["Upload", "Sample", "Prediction"])
+tab1, tab2, tab3 = st.tabs(["Prediction", "Upload", "Sample"])
 
 with tab1:
-    st.header("Upload")
+    st.header("Prediction")
     # ONLY upload content here
 
 with tab2:
-    st.header("Sample")
+    st.header("Upload")
     # ONLY sample content here
 
 with tab3:
-    st.header("Prediction")
+    st.header("Sample")
     # ONLY prediction content here
 
 # Custom CSS for better styling
