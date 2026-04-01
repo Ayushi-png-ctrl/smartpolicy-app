@@ -12,23 +12,25 @@ st.set_page_config(
     layout="wide"
 )
 
+
+# THEN TABS
 tab1, tab2, tab3 = st.tabs(["Prediction", "Upload", "Sample"])
 
+# TAB 1
 with tab1:
     st.header("Prediction")
-    # ONLY upload content here
 
+# TAB 2
 with tab2:
     st.header("Upload")
-    # ONLY sample content here
 
+# TAB 3
 with tab3:
     st.header("Sample")
-    # ONLY prediction content here
 
 # Custom CSS for better styling
-with tab1:
-    st.markdown("""CSS""",unsafe_allow_html=True)
+with tab 1:
+st.markdown("""CSS""")
 <style>
     .main-header {
         font-size: 3rem;
