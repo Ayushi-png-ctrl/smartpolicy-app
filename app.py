@@ -28,7 +28,7 @@ with tab3:
 
 # Custom CSS for better styling
 with tab1:
-    st.markdown("""
+    st.markdown("""CSS""",unsafe_allow_html=True)
 <style>
     .main-header {
         font-size: 3rem;
